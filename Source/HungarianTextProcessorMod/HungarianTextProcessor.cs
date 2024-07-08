@@ -106,31 +106,31 @@ namespace TaleWorlds.Localization.TextProcessor.LanguageProcessors
             }
         }
 
-        //[TupleElementNames(new string[] { "wordGroup", "firstMarkerPost" })]
-        //private static List<ValueTuple<string, int>> WordGroups
-        //{
-        //[return: TupleElementNames(new string[] { "wordGroup", "firstMarkerPost" })]
-        //  get
-        //      {
-        //          if (HungarianTextProcessor._wordGroups == null)
-        //          {
-        //          HungarianTextProcessor._wordGroups = new List<ValueTuple<string, int>>();
-        //          }
-        //        return HungarianTextProcessor._wordGroups;
-        //   }
-        //}
-		
-        private static List<(string wordGroup, int firstMarkerPost)> WordGroups
+        [TupleElementNames(new string[] { "wordGroup", "firstMarkerPost" })]
+        private static List<ValueTuple<string, int>> WordGroups
         {
-            get
-            {
-                if (HungarianTextProcessor._wordGroups == null)
-                {
-                    HungarianTextProcessor._wordGroups = new List<(string, int)>();
-                }
+        [return: TupleElementNames(new string[] { "wordGroup", "firstMarkerPost" })]
+          get
+              {
+                  if (HungarianTextProcessor._wordGroups == null)
+                  {
+                  HungarianTextProcessor._wordGroups = new List<ValueTuple<string, int>>();
+                  }
                 return HungarianTextProcessor._wordGroups;
-            }
+           }
         }
+		
+        //private static List<(string wordGroup, int firstMarkerPost)> WordGroups
+        //{
+        //    get
+        //    {
+        //        if (HungarianTextProcessor._wordGroups == null)
+        //        {
+        //            HungarianTextProcessor._wordGroups = new List<(string, int)>();
+        //        }
+        //        return HungarianTextProcessor._wordGroups;
+        //    }
+        //}
 
         private static List<string> WordGroupsNoTags
         {
@@ -2378,8 +2378,9 @@ namespace TaleWorlds.Localization.TextProcessor.LanguageProcessors
         [ThreadStatic]
         private static HungarianTextProcessor.WordGenderEnum _curGender;
 
-		//[TupleElementNames(new string[] { "wordGroup", "firstMarkerPost" })]
-        private static List<(string wordGroup, int firstMarkerPost)> SomeField;
+		[TupleElementNames(new string[] { "wordGroup", "firstMarkerPost" })]
+        //private static List<(string wordGroup, int firstMarkerPost)> SomeField;
+		
         [ThreadStatic]
         private static List<ValueTuple<string, int>> _wordGroups = new List<ValueTuple<string, int>>();
 
